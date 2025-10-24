@@ -1,0 +1,87 @@
+.container {
+    padding: 80px 60px;
+}
+
+.formSubmit {
+    display: flex;
+    gap: 8px;
+
+    input {
+        flex: 1;
+        padding-left: 14px;
+        font-size: 16px;
+        border: 1px solid #D1D5DB;
+        border-radius: 6px;
+    }
+}
+
+.btnAdd {
+    padding: 14px 16px;
+    font-size: 16px;
+    background-color: #141413;
+    color: #fff;
+    border-radius: 8px;
+    border: 2px solid;
+}
+.btnAdd:hover {
+    cursor: pointer;
+    border: 2px solid #d503ffff
+}
+
+.emptyTitle {
+    margin-top: 50px;
+    text-align: center;
+    color:#6B7280;
+    font-style: italic
+}
+
+.list {
+    margin-top: 40px;
+
+    h1 {
+        font-weight: 600;
+    }
+}
+
+.ingredientList{
+    list-style-position: inside; /* Chấm nằm trong cùng dòng nội dung */
+    margin: 30px 0 0;           
+    color: #6B7280;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;  
+    
+}
+
+.recipe {
+    display: flex;
+    gap: 40px;
+    padding: 30px 40px;
+    background-color:#F0EFEB;
+    border-radius: 6px;
+    align-items: end;
+    margin-top: 50px;
+
+}
+.title {
+    flex: 1;
+}
+.titleQuestion{
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.subTitle {
+    font-size: 14px;
+    color: #6B7280;
+}
+
+.btnGetRecipe {
+    padding: 12px 16px;
+    line-height: 1;  
+    font-size: 14px;
+    border-radius: 6px;
+    border: none;
+    background: #3B7A57;
+    color: #fff
+}
