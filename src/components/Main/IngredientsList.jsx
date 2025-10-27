@@ -1,6 +1,14 @@
 import styles from "./main.module.css";
 
-export default function IngredientsList({ ingredientsList }) {
+
+export default function IngredientsList({ ingredientsList, toggleRecipeShown,getRecipe }) {
+
+async function handleGetRecipe() {
+    toggleRecipeShown()
+    await getRecipe()
+}
+
+
     return (
         <section className={styles.list}>
             <h1>Ingredients on hand:</h1>
@@ -20,7 +28,7 @@ export default function IngredientsList({ ingredientsList }) {
                     </p>
                 </div>
 
-                <button className={styles.btnGetRecipe}>Get a recipe</button>
+                <button className={styles.btnGetRecipe} onClick={handleGetRecipe}>Get a recipe</button>
                 </div>
             )}
         </section>
