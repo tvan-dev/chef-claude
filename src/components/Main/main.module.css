@@ -85,7 +85,12 @@
     background: #3B7A57;
     color: #fff
 }
-
+.btnReset {
+    background: #B00020;
+    margin-top: 20px;
+    width: 100%;
+    font-size: 20px;
+}
 .titleDescribe{
     margin: 30px 0 20px;
     font-weight: 600;

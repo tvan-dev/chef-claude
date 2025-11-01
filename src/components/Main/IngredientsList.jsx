@@ -1,10 +1,10 @@
 import styles from "./main.module.css";
 
 
-export default function IngredientsList({ ingredientsList, toggleRecipeShown,getRecipe }) {
+export default function IngredientsList({ ingredientsList, setRecipeShown,getRecipe,ref }) {
 
 async function handleGetRecipe() {
-    toggleRecipeShown()
+    setRecipeShown(true)
     await getRecipe()
 }
 
@@ -20,15 +20,15 @@ async function handleGetRecipe() {
             </ul>
 
             {ingredientsList.length > 2 && (
-                <div className={styles.recipe}>
-                <div className={styles.title}>
-                    <h3 className={styles.titleQuestion}>Ready for a recipe?</h3>
-                    <p className={styles.subTitle}>
-                    Generate a recipe from your list of ingredients.
-                    </p>
-                </div>
+                <div className={styles.recipe} ref={ref}>
+                    <div className={styles.title}>
+                        <h3 className={styles.titleQuestion}>Ready for a recipe?</h3>
+                        <p className={styles.subTitle}>
+                        Generate a recipe from your list of ingredients.
+                        </p>
+                    </div>
 
-                <button className={styles.btnGetRecipe} onClick={handleGetRecipe}>Get a recipe</button>
+                    <button className={styles.btnGetRecipe} onClick={handleGetRecipe} >Get a recipe</button>
                 </div>
             )}
         </section>

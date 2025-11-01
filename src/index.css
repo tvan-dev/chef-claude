@@ -13,5 +13,6 @@ body {
   background-image: url(https://img.freepik.com/premium-photo/abstract-background-backgrounds-outdoors-purple_53876-1173305.jpg?semt=ais_hybrid&w=740&q=80);
   background-size: cover;
   background-repeat: no-repeat;
-  
+  background-attachment: fixed;
 }
+

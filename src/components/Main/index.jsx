@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import styles from "./main.module.css";
 import Form from "./Form";
 import IngredientsList from "./IngredientsList";
@@ -9,15 +9,13 @@ export default function Main() {
     const [input, setInput] = useState("");
     const [ingredientsList, setIngredientList] = useState([]);
     const [recipeShown, setRecipeShown] = useState(false);
-    const [recipe, setRecipe] = useState();
+    const [recipe, setRecipe] = useState("");
+    const refRecipeSection = useRef(null)
 
     function add() {
         setIngredientList((prev) => [...prev, input]);
     }
 
-    function toggleRecipeShown() {
-        setRecipeShown((prevShown) => !prevShown);
-    }
 
     async function getRecipe() {
         const recipeTextAi = await getRecipeFromMistral(ingredientsList);
@@ -30,6 +28,15 @@ export default function Main() {
         setRecipeShown(false);
     }
 
+    useEffect(() => {
+        if(recipe && refRecipeSection !== null) {
+            refRecipeSection.current.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            })
+        }
+    })
+
     return (
         <main className={styles.container}>
         <Form inputValue={input} setInputValue={setInput} addIngredient={add} />
@@ -37,8 +44,9 @@ export default function Main() {
         {ingredientsList.length > 0 && (
             <IngredientsList
             ingredientsList={ingredientsList}
-            toggleRecipeShown={toggleRecipeShown}
+            setRecipeShown={setRecipeShown}
             getRecipe={getRecipe}
+            ref={refRecipeSection}
             />
         )}
 

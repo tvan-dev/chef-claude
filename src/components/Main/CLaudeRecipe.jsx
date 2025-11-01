@@ -15,7 +15,7 @@ export default function ClaudeRecipe({ recipe, reset }) {
           </ReactMarkdown>
         </div>
       </div>
-      <button className={styles.btnReset} onClick={reset}>Reset</button>
+      <button className={styles.btnReset} onClick={reset}>Clear All</button>
     </section>
   );
 }
